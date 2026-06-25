@@ -512,6 +512,65 @@
             margin-bottom: 14px;
         }
 
+        /* ---------- Tracks spotlight (03) ---------- */
+        .tracks-spotlight {
+            position: relative;
+            background: linear-gradient(160deg, var(--gold-bg) 0%, #f7f1de 100%);
+            border: 1px solid rgba(159, 122, 34, 0.35);
+            border-radius: 16px;
+            padding: 52px 44px 44px;
+            box-shadow: 0 24px 48px -30px rgba(159, 122, 34, 0.45);
+        }
+
+        .spotlight-ribbon {
+            position: absolute;
+            top: -14px;
+            right: 32px;
+            background: linear-gradient(135deg, var(--gold) 0%, #c4941f 100%);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 7px 16px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px -6px rgba(159, 122, 34, 0.6);
+        }
+
+        .track-grid {
+            margin-top: 8px;
+        }
+
+        .track-card {
+            position: relative;
+            background: #fff;
+            border-color: rgba(159, 122, 34, 0.25);
+        }
+
+        .track-card .track-n {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            font-family: var(--font-serif);
+            font-weight: 800;
+            font-size: 28px;
+            color: rgba(159, 122, 34, 0.18);
+            line-height: 1;
+        }
+
+        .track-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 16px 30px -16px rgba(159, 122, 34, 0.55);
+        }
+
+        .track-card .ic {
+            background: linear-gradient(135deg, var(--gold-bg) 0%, #f0e6c4 100%);
+        }
+
+        .track-card .tag {
+            color: var(--gold);
+            background: var(--gold-bg);
+        }
+
         /* ---------- Comparison ---------- */
         .compare {
             display: grid;
@@ -1102,6 +1161,8 @@
             .cols-2, .cols-3, .compare, .premium-grid, .day-tabs, .steps { grid-template-columns: 1fr; }
             .sec-title { font-size: 26px; }
             .premium { padding: 28px; }
+            .tracks-spotlight { padding: 40px 20px 28px; }
+            .spotlight-ribbon { right: 16px; top: -12px; font-size: 11px; padding: 6px 12px; }
             .modal-content { padding: 28px 22px; }
             .check-grid { grid-template-columns: 1fr; }
         }
@@ -1231,38 +1292,44 @@
                 </section>
 
                 <!-- 03 Tracks -->
-                <section class="block" id="tracks">
+                <section class="block tracks-spotlight" id="tracks">
+                    <span class="spotlight-ribbon">★ 핵심 참여 옵션</span>
                     <span class="eyebrow">03 · Engagement</span>
                     <h2 class="sec-title">기업 참여 방식</h2>
                     <p class="sec-lead">귀사의 채용·브랜딩 목표에 맞춰 다양한 형태로 참여할 수 있습니다. 여러 방식을 동시에 선택하는 것도 가능합니다.</p>
 
-                    <div class="card-grid cols-3">
-                        <div class="card">
-                            <span class="tag">채용</span>
-                            <h4>현장 심사위원 참여</h4>
+                    <div class="card-grid cols-3 track-grid">
+                        <div class="card track-card">
+                            <div class="track-n">01</div>
+                            <div class="ic">🎓</div>
+                            <span class="tag">멘토</span>
+                            <h4>현장 멘토링 참여 (Day1)</h4>
+                            <p>DAY 1에서 직군별 멘토로 참여해 참가자의 자기소개 피칭, 이력서·포트폴리오를 1:1로 코칭하며 우수 인재를 가까이서 만납니다.</p>
+                        </div>
+                        <div class="card track-card">
+                            <div class="track-n">02</div>
+                            <div class="ic">🧑‍⚖️</div>
+                            <span class="tag">심사</span>
+                            <h4>현장 심사위원 참여 (Day2)</h4>
                             <p>DAY 2에서 참가자의 피칭·면접을 직접 평가하고 채용 가능성을 판단하며 우수 인재를 발굴합니다.</p>
                         </div>
-                        <div class="card">
-                            <span class="tag">상시</span>
-                            <h4>온라인 프로필 열람</h4>
-                            <p>참가자의 이력서·포트폴리오·자기소개 영상을 온라인으로 사전 열람해 원하는 인재를 미리 파악합니다.</p>
-                        </div>
-                        <div class="card">
+                        <div class="card track-card">
+                            <div class="track-n">03</div>
+                            <div class="ic">🤝</div>
                             <span class="tag">매칭</span>
-                            <h4>면접 신청 &amp; 사후 매칭</h4>
-                            <p>관심 참가자에게 직접 면접을 신청하고, 행사 후 2~4주 사후 매칭으로 채용 연계를 지원받습니다.</p>
+                            <h4>인재 채용 매칭</h4>
+                            <p>온라인 프로필 열람으로 원하는 인재를 미리 파악하고, 관심 참가자에게 면접을 신청해 행사 후 2~4주 사후 매칭으로 채용 연계를 지원받습니다.</p>
                         </div>
-                        <div class="card">
-                            <span class="tag">네트워킹</span>
-                            <h4>현장 네트워킹</h4>
-                            <p>DAY 1 점심시간에 참가자·멘토·운영진과 네트워킹하며 인재 발굴과 기업 홍보를 동시에 진행합니다.</p>
-                        </div>
-                        <div class="card">
+                        <div class="card track-card">
+                            <div class="track-n">04</div>
+                            <div class="ic">🏆</div>
                             <span class="tag">브랜딩</span>
                             <h4>시상 &amp; 브랜드 스폰서</h4>
                             <p>시상 기업으로 참여해 시상식에서 기업명을 노출하고, 제품·리워드 후원으로 브랜딩을 강화합니다.</p>
                         </div>
-                        <div class="card">
+                        <div class="card track-card">
+                            <div class="track-n">05</div>
+                            <div class="ic">📢</div>
                             <span class="tag">노출</span>
                             <h4>채용 공고 등록</h4>
                             <p>Soo House 앱과 온라인 투표 페이지에 채용 공고를 등록해 외국인 구직자에게 직접 노출합니다.</p>

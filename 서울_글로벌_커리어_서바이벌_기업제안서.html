@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울 글로벌 커리어 서바이벌 2026 - 기업 파트너십 제안서</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #111827;
+            --ink-soft: #374151;
+            --muted: #6b7280;
+            --line: #d9dde6;
+            --bg: #ffffff;
+            --bg-soft: #f7f8fa;
+            --primary: #1f3a5f;
+            --primary-dark: #152943;
+            --accent: #8a6f2a;
+            --gold: #9f7a22;
+            --gold-bg: #faf7ee;
+            --teal: #2f6f6d;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', 'Noto Sans KR', sans-serif;
+            --transition: all 0.22s ease;
+            --shadow: 0 8px 24px -18px rgba(17, 24, 39, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------- Layout: Sidebar + Main ---------- */
+        .layout {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 0;
+            width: 280px;
+            min-width: 280px;
+            height: 100vh;
+            padding: 40px 28px;
+            border-right: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            background: var(--bg);
+        }
+
+        .sidebar-brand {
+            font-family: var(--font-serif);
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .sidebar-brand .accent {
+            color: var(--primary);
+        }
+
+        .sidebar-sub {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .side-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            flex: 1;
+        }
+
+        .side-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--muted);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .side-nav a .num {
+            font-family: var(--font-serif);
+            font-size: 13px;
+            font-style: italic;
+            color: var(--line);
+            transition: var(--transition);
+            min-width: 18px;
+        }
+
+        .side-nav a:hover {
+            color: var(--ink);
+            background: var(--bg-soft);
+        }
+
+        .side-nav a.active {
+            color: var(--primary);
+            background: #eef2f7;
+            font-weight: 700;
+        }
+
+        .side-nav a.active .num {
+            color: var(--primary);
+        }
+
+        .side-nav a.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            border-radius: 3px;
+            background: var(--primary);
+        }
+
+        .sidebar-cta {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 24px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 6px;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gold) 0%, #c4941f 100%);
+            color: #fff;
+            font-size: 15.5px;
+            font-weight: 700;
+            padding: 16px 30px;
+            letter-spacing: 0.01em;
+            box-shadow: 0 10px 24px -6px rgba(159, 122, 34, 0.7);
+            animation: ctaPulse 2.4s ease-in-out infinite;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.6s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 130%;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #c4941f 0%, #a87a16 100%);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 16px 30px -6px rgba(159, 122, 34, 0.8);
+            animation-play-state: paused;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 10px 24px -6px rgba(159, 122, 34, 0.7); }
+            50% { box-shadow: 0 10px 30px -2px rgba(159, 122, 34, 1); }
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--ink);
+            border-color: var(--line);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #ffffff;
+            box-shadow: 0 6px 16px -6px rgba(159, 122, 34, 0.55);
+        }
+
+        .btn-gold:hover {
+            background: #b88a10;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -6px rgba(159, 122, 34, 0.6);
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(1100px 520px at 88% -10%, rgba(159, 122, 34, 0.28), transparent 60%),
+                        radial-gradient(800px 500px at -5% 110%, rgba(47, 111, 109, 0.22), transparent 60%),
+                        linear-gradient(160deg, #1b2a45 0%, #17233a 55%, #121c30 100%);
+            color: #fff;
+            padding: 84px 48px 72px;
+            border-bottom: 1px solid #0f1729;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            left: 48px;
+            right: 48px;
+            bottom: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.24);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 7px 14px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            margin-bottom: 26px;
+        }
+
+        .hero-badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-weight: 800;
+            font-size: 58px;
+            line-height: 1.06;
+            letter-spacing: 0;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 .kr {
+            font-family: var(--font-sans);
+            font-weight: 900;
+            display: block;
+            font-size: 30px;
+            margin-top: 14px;
+            letter-spacing: 0;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 18px 0 30px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 26px;
+            margin-bottom: 34px;
+        }
+
+        .hero-meta-item .lbl {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-meta-item .val {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn-ghost {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* ---------- Sections ---------- */
+        section.block {
+            padding: 78px 0 8px;
+            scroll-margin-top: 24px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .sec-title {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 0;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .sec-lead {
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 640px;
+            margin-bottom: 36px;
+        }
+
+        /* ---------- Stat cards ---------- */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .stat {
+            border: 1px solid var(--line);
+            border-top: 3px solid var(--primary);
+            border-radius: 6px;
+            padding: 24px 20px;
+            background: var(--bg);
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat .v {
+            font-family: var(--font-serif);
+            font-size: 38px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        .stat .v small {
+            font-size: 18px;
+            color: var(--gold);
+            -webkit-background-clip: initial;
+            background-clip: initial;
+        }
+
+        .stat .l {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 10px;
+        }
+
+        /* ---------- Info / feature cards ---------- */
+        .card-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .cols-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 26px 24px;
+            background: var(--bg);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .card .ic {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #eef2f7 0%, #dfe7f1 100%);
+        }
+
+        .card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .card .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            background: #eef2f7;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+        }
+
+        /* ---------- Tracks spotlight (03) ---------- */
+        .tracks-spotlight {
+            position: relative;
+            background: linear-gradient(160deg, var(--gold-bg) 0%, #f7f1de 100%);
+            border: 1px solid rgba(159, 122, 34, 0.35);
+            border-radius: 16px;
+            padding: 52px 44px 44px;
+            box-shadow: 0 24px 48px -30px rgba(159, 122, 34, 0.45);
+        }
+
+        .spotlight-ribbon {
+            position: absolute;
+            top: -14px;
+            right: 32px;
+            background: linear-gradient(135deg, var(--gold) 0%, #c4941f 100%);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 7px 16px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px -6px rgba(159, 122, 34, 0.6);
+        }
+
+        .track-grid {
+            margin-top: 8px;
+        }
+
+        .track-card {
+            position: relative;
+            background: #fff;
+            border-color: rgba(159, 122, 34, 0.25);
+        }
+
+        .track-card .track-n {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            font-family: var(--font-serif);
+            font-weight: 800;
+            font-size: 28px;
+            color: rgba(159, 122, 34, 0.18);
+            line-height: 1;
+        }
+
+        .track-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 16px 30px -16px rgba(159, 122, 34, 0.55);
+        }
+
+        .track-card .ic {
+            background: linear-gradient(135deg, var(--gold-bg) 0%, #f0e6c4 100%);
+        }
+
+        .track-card .tag {
+            color: var(--gold);
+            background: var(--gold-bg);
+        }
+
+        /* ---------- Comparison ---------- */
+        .compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .compare-col {
+            border-radius: 6px;
+            padding: 26px 24px;
+            border: 1px solid var(--line);
+        }
+
+        .compare-col.old {
+            background: var(--bg-soft);
+        }
+
+        .compare-col.new {
+            background: #f8fafc;
+            border-color: #b8c1d1;
+        }
+
+        .compare-col h5 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        .compare-col.new h5 {
+            color: var(--primary);
+        }
+
+        .compare-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .compare-col li {
+            font-size: 14px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .compare-col li::before {
+            content: '✕';
+            color: #c0c4cf;
+            font-weight: 700;
+        }
+
+        .compare-col.new li::before {
+            content: '✓';
+            color: var(--teal);
+        }
+
+        /* ---------- Highlight: Mentor / Judge (paid) ---------- */
+        .premium {
+            position: relative;
+            border-radius: 8px;
+            padding: 40px;
+            background: #17233a;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .premium::after {
+            content: '';
+            position: absolute;
+            left: 40px;
+            right: 40px;
+            top: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .premium-tag {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 7px 14px;
+            border-radius: 4px;
+            margin-bottom: 18px;
+        }
+
+        .premium h3 {
+            position: relative;
+            z-index: 2;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+
+        .premium > p {
+            position: relative;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 600px;
+            margin-bottom: 28px;
+            font-size: 15px;
+        }
+
+        .premium-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+
+        .premium-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 6px;
+            padding: 22px;
+        }
+
+        .premium-card .role-day {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .premium-card h4 {
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .premium-card p {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .premium-note {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            background: var(--gold-bg);
+            color: #4a3800;
+            border-radius: 6px;
+            padding: 18px 22px;
+        }
+
+        .premium-note .amount {
+            font-weight: 800;
+            font-size: 15px;
+        }
+
+        .premium-note .desc {
+            font-size: 13.5px;
+            flex: 1;
+            min-width: 220px;
+            color: #6b5400;
+        }
+
+        /* ---------- Day timeline ---------- */
+        .day-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .day-tab {
+            flex: 1;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 18px 20px;
+            background: var(--bg);
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-sans);
+            transition: var(--transition);
+        }
+
+        .day-tab .d {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .day-tab .t {
+            font-size: 17px;
+            font-weight: 700;
+            margin-top: 4px;
+            color: var(--ink);
+        }
+
+        .day-tab.active {
+            border-color: var(--primary);
+            background: #f8fafc;
+            box-shadow: none;
+        }
+
+        .day-tab.active .d {
+            color: var(--primary);
+        }
+
+        .day-panel {
+            display: none;
+            animation: fade 0.4s ease;
+        }
+
+        .day-panel.active {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .schedule {
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .sch-row {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 18px;
+            padding: 16px 22px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .sch-row:last-child {
+            border-bottom: none;
+        }
+
+        .sch-row .time {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .sch-row .what b {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .sch-row .what span {
+            font-size: 13.5px;
+            color: var(--muted);
+        }
+
+        /* ---------- Roadmap timeline ---------- */
+        .road {
+            position: relative;
+            padding-left: 26px;
+            border-left: 2px solid var(--line);
+        }
+
+        .road-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .road-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--primary);
+        }
+
+        .road-item.done::before {
+            background: var(--primary);
+        }
+
+        .road-date {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            font-style: italic;
+            font-family: var(--font-serif);
+        }
+
+        .road-item h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 4px 0 4px;
+        }
+
+        .road-item p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* ---------- Process steps ---------- */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .step {
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .step:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .step .n {
+            font-family: var(--font-serif);
+            font-weight: 800;
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .step h5 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ---------- Final CTA ---------- */
+        .final-cta {
+            margin-top: 60px;
+            border-radius: 8px;
+            padding: 52px 44px;
+            text-align: center;
+            background: linear-gradient(135deg, #17233a 0%, #1f3a5f 100%);
+            color: #fff;
+            border: 1px solid rgba(159, 122, 34, 0.35);
+            box-shadow: 0 20px 40px -24px rgba(17, 24, 39, 0.5);
+        }
+
+        .final-cta h3 {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 520px;
+            margin: 0 auto 28px;
+        }
+
+        .final-cta .btn-ghost {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+
+        .final-cta .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        footer {
+            padding: 44px 0 80px;
+            margin-top: 40px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        footer strong {
+            color: var(--ink);
+        }
+
+        /* ---------- Mobile nav toggle ---------- */
+        .mobile-bar {
+            display: none;
+        }
+
+        /* ---------- Modal ---------- */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.58);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--bg);
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            max-width: 620px;
+            width: 100%;
+            max-height: 92vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            animation: modalUp 0.22s ease;
+        }
+
+        @keyframes modalUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            font-size: 22px;
+            cursor: pointer;
+            background: var(--bg-soft);
+            border: none;
+            color: var(--ink);
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            background: var(--line);
+        }
+
+        .modal-content h2 {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .modal-intro {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.12);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .check-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .check-grid.one {
+            grid-template-columns: 1fr;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .wrap { padding: 0 32px; }
+            .hero { padding: 64px 32px 56px; }
+            .hero h1 { font-size: 46px; }
+        }
+
+        @media (max-width: 860px) {
+            .layout { display: block; }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-bar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: sticky;
+                top: 0;
+                z-index: 900;
+                background: rgba(255, 255, 255, 0.92);
+                backdrop-filter: blur(8px);
+                border-bottom: 1px solid var(--line);
+                padding: 12px 20px;
+            }
+
+            .mobile-bar .mb-brand {
+                font-weight: 800;
+                font-size: 15px;
+            }
+
+            .mobile-bar .mb-brand .accent { color: var(--primary); }
+
+            .mobile-nav {
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;
+                padding: 10px 20px;
+                position: sticky;
+                top: 49px;
+                z-index: 880;
+                background: var(--bg);
+                border-bottom: 1px solid var(--line);
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            .mobile-nav::-webkit-scrollbar { display: none; }
+
+            .mobile-nav a {
+                white-space: nowrap;
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--muted);
+                padding: 6px 12px;
+                border-radius: 6px;
+                background: var(--bg-soft);
+            }
+
+            .mobile-nav a.active {
+                color: #fff;
+                background: var(--primary);
+            }
+
+            .wrap { padding: 0 20px; }
+            .hero { padding: 48px 20px 44px; }
+            .hero h1 { font-size: 36px; }
+            .hero h1 .kr { font-size: 24px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .cols-2, .cols-3, .compare, .premium-grid, .day-tabs, .steps { grid-template-columns: 1fr; }
+            .sec-title { font-size: 26px; }
+            .premium { padding: 28px; }
+            .tracks-spotlight { padding: 40px 20px 28px; }
+            .spotlight-ribbon { right: 16px; top: -12px; font-size: 11px; padding: 6px 12px; }
+            .modal-content { padding: 28px 22px; }
+            .check-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 861px) {
+            .mobile-nav { display: none; }
+        }
+
+        /* ---------- Print ---------- */
+        @media print {
+            .sidebar, .mobile-bar, .mobile-nav, .hero-actions, .btn, .final-cta .hero-actions, .close-btn { display: none !important; }
+            .layout { display: block; }
+            .hero { background: #17233a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .day-panel { display: block !important; }
+            section.block { page-break-inside: avoid; padding: 30px 0; }
+            .premium, .card, .stat, .final-cta { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile top bar -->
+    <div class="mobile-bar">
+        <div class="mb-brand">Seoul Global <span class="accent">Career Survival</span></div>
+        <button class="btn btn-primary" style="padding:8px 16px;" onclick="openModal()">참여 신청</button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav"></nav>
+
+    <div class="layout">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-brand">Seoul Global<br><span class="accent">Career Survival</span></div>
+                <div class="sidebar-sub">2026 Partnership</div>
+            </div>
+            <ul class="side-nav" id="sideNav">
+                <li><a href="#overview" data-label="개요"><span class="num">01</span> 행사 개요</a></li>
+                <li><a href="#why" data-label="배경"><span class="num">02</span> 제안 배경 &amp; 차별점</a></li>
+                <li><a href="#tracks" data-label="참여"><span class="num">03</span> 기업 참여 방식</a></li>
+                <li><a href="#mentor" data-label="멘토/심사"><span class="num">04</span> 멘토 &amp; 심사위원</a></li>
+                <li><a href="#benefits" data-label="혜택"><span class="num">05</span> 파트너 혜택</a></li>
+                <li><a href="#program" data-label="진행"><span class="num">06</span> 행사 진행 (2일)</a></li>
+                <li><a href="#matching" data-label="사후매칭"><span class="num">07</span> 사후 채용 매칭</a></li>
+            </ul>
+            <div class="sidebar-cta">
+                <button class="btn btn-primary" onclick="openModal()">참여 신청하기</button>
+                <button class="btn btn-ghost" onclick="window.print()">PDF로 내보내기</button>
+            </div>
+        </aside>
+
+        <!-- ===== Main ===== -->
+        <main class="main">
+            <!-- Hero -->
+            <header class="hero">
+                <div class="hero-inner">
+                    <span class="hero-badge"><span class="dot"></span> 서울글로벌센터 &times; Soo House · Partnership Proposal</span>
+                    <h1>Seoul Global<br>Career Survival
+                        <span class="kr">서울 글로벌 커리어 서바이벌 2026</span>
+                    </h1>
+                    <p class="hero-desc">외국인 인재와 국내 기업을 연결하는 취업 매칭형 경연 프로그램.<br>검증된 글로벌 인재를 콘텐츠·멘토링·피칭·면접·온라인 투표로 한자리에서 만나보세요.</p>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item"><div class="lbl">행사 일정</div><div class="val">2026.08.22(토)~23(일)</div></div>
+                        <div class="hero-meta-item"><div class="lbl">장소</div><div class="val">서울글로벌센터</div></div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="openModal()">참여 신청하기 →</button>
+                        <button class="btn btn-ghost" onclick="document.getElementById('mentor').scrollIntoView()">멘토·심사위원 안내</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="wrap">
+                <!-- 01 Overview -->
+                <section class="block" id="overview">
+                    <span class="eyebrow">01 · Overview</span>
+                    <h2 class="sec-title">행사 개요</h2>
+                    <p class="sec-lead">오디션 서바이벌 포맷의 외국인 취업 프로그램입니다. 단순 부스·이력서 제출을 넘어, 참가자의 실제 역량을 콘텐츠화하고 멘토링·피칭·면접·온라인 투표·기업 매칭을 결합해 <strong>실제 채용 연계</strong>를 목표로 합니다.</p>
+
+                    <div class="stat-grid">
+                        <div class="stat"><div class="v">30<small>명</small></div><div class="l">검증된 외국인 인재 (6인 5조)</div></div>
+                        <div class="stat"><div class="v">5<small>직군</small></div><div class="l">마케팅·해외영업·개발·콘텐츠·관광</div></div>
+                        <div class="stat"><div class="v">2<small>days</small></div><div class="l">8.22(토)~8.23(일) 집중 운영</div></div>
+                        <div class="stat"><div class="v">30<small>개사+</small></div><div class="l">외국인 채용 희망 참여 기업</div></div>
+                    </div>
+
+                    <div class="card-grid cols-2">
+                        <div class="card">
+                            <div class="ic">🎯</div>
+                            <h4>매칭형 경연 포맷</h4>
+                            <p>자기소개 영상, 직군별 멘토링, 직무 퀴즈쇼, 심사위원 면접까지 — 참가자의 직무 역량을 다각도로 검증한 뒤 기업과 연결합니다.</p>
+                        </div>
+                        <div class="card">
+                            <div class="ic">🌏</div>
+                            <h4>글로벌 인재풀 &amp; 콘텐츠 확산</h4>
+                            <p>Soo House 앱의 외국인 유저 풀과 글로벌 크리에이터 네트워크를 활용해 모집·콘텐츠 확산·사후 커뮤니티화를 통합 운영합니다.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 02 Why -->
+                <section class="block" id="why">
+                    <span class="eyebrow">02 · Why</span>
+                    <h2 class="sec-title">제안 배경 &amp; 핵심 차별점</h2>
+                    <p class="sec-lead">기존 취업 박람회는 일회성 부스 방문과 이력서 제출에 머물러 실질적 매칭과 콘텐츠 확산에 한계가 있었습니다. 본 프로그램은 그 한계를 구조적으로 해결합니다.</p>
+
+                    <div class="compare">
+                        <div class="compare-col old">
+                            <h5>기존 취업 박람회</h5>
+                            <ul>
+                                <li>부스 방문·이력서 제출 중심의 일회성 행사</li>
+                                <li>참가자 역량을 제대로 보여주기 어려움</li>
+                                <li>행사 당일에 그쳐 사후 매칭·성과 추적 부재</li>
+                                <li>SNS·언론 확산이 제한되어 바이럴 효과 미흡</li>
+                            </ul>
+                        </div>
+                        <div class="compare-col new">
+                            <h5>서울 글로벌 커리어 서바이벌</h5>
+                            <ul>
+                                <li>자기소개 영상·피칭·면접을 콘텐츠화해 역량 입증</li>
+                                <li>직군별 멘토링으로 이력서·포트폴리오 사전 보강</li>
+                                <li>온라인 투표로 대중 참여 유도 &amp; 인지도 확대</li>
+                                <li>행사 후 2~4주 사후 매칭으로 실제 채용 연계 추적</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 03 Tracks -->
+                <section class="block tracks-spotlight" id="tracks">
+                    <span class="spotlight-ribbon">★ 핵심 참여 옵션</span>
+                    <span class="eyebrow">03 · Engagement</span>
+                    <h2 class="sec-title">기업 참여 방식</h2>
+                    <p class="sec-lead">귀사의 채용·브랜딩 목표에 맞춰 다양한 형태로 참여할 수 있습니다. 여러 방식을 동시에 선택하는 것도 가능합니다.</p>
+
+                    <div class="card-grid cols-3 track-grid">
+                        <div class="card track-card">
+                            <div class="track-n">01</div>
+                            <div class="ic">🎓</div>
+                            <span class="tag">멘토</span>
+                            <h4>현장 멘토링 참여 (Day1)</h4>
+                            <p>DAY 1에서 직군별 멘토로 참여해 참가자의 자기소개 피칭, 이력서·포트폴리오를 1:1로 코칭하며 우수 인재를 가까이서 만납니다.</p>
+                        </div>
+                        <div class="card track-card">
+                            <div class="track-n">02</div>
+                            <div class="ic">🧑‍⚖️</div>
+                            <span class="tag">심사</span>
+                            <h4>현장 심사위원 참여 (Day2)</h4>
+                            <p>DAY 2에서 참가자의 피칭·면접을 직접 평가하고 채용 가능성을 판단하며 우수 인재를 발굴합니다.</p>
+                        </div>
+                        <div class="card track-card">
+                            <div class="track-n">03</div>
+                            <div class="ic">🤝</div>
+                            <span class="tag">매칭</span>
+                            <h4>인재 채용 매칭</h4>
+                            <p>온라인 프로필 열람으로 원하는 인재를 미리 파악하고, 관심 참가자에게 면접을 신청해 행사 후 2~4주 사후 매칭으로 채용 연계를 지원받습니다.</p>
+                        </div>
+                        <div class="card track-card">
+                            <div class="track-n">04</div>
+                            <div class="ic">🏆</div>
+                            <span class="tag">브랜딩</span>
+                            <h4>시상 &amp; 브랜드 스폰서</h4>
+                            <p>시상 기업으로 참여해 시상식에서 기업명을 노출하고, 제품·리워드 후원으로 브랜딩을 강화합니다.</p>
+                        </div>
+                        <div class="card track-card">
+                            <div class="track-n">05</div>
+                            <div class="ic">📢</div>
+                            <span class="tag">노출</span>
+                            <h4>채용 공고 등록</h4>
+                            <p>Soo House 앱과 온라인 투표 페이지에 채용 공고를 등록해 외국인 구직자에게 직접 노출합니다.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04 Mentor & Judge (Premium / Paid) -->
+                <section class="block" id="mentor">
+                    <span class="eyebrow">04 · Paid Role</span>
+                    <h2 class="sec-title">멘토 &amp; 심사위원 참여</h2>
+                    <p class="sec-lead">현장에서 인재를 가장 가까이 만나는 핵심 역할입니다. 멘토·심사위원으로 참여하시는 기업에는 <strong>별도의 참여 비용을 지급</strong>해 드립니다.</p>
+
+                    <div class="premium">
+                        <span class="premium-tag">멘토·심사위원 사례비 지급</span>
+                        <h3>인재를 가장 먼저, 가장 깊이 만나는 자리</h3>
+                        <p>멘토와 심사위원은 참가자의 역량을 1:1로 직접 검증하며 우수 인재를 선점할 수 있는 가장 유리한 포지션입니다. 멘토·심사위원 <strong>동시 참여도 가능</strong>합니다.</p>
+
+                        <div class="premium-grid">
+                            <div class="premium-card">
+                                <div class="role-day">DAY 1 · 8월 22일 (토)</div>
+                                <h4>멘토 (Mentor)</h4>
+                                <p>직군별 멘토링을 진행합니다. 참가자의 자기소개 피칭 점검, 이력서·포트폴리오 1:1 피드백, 실무 프로젝트 과제 코칭을 담당합니다.</p>
+                            </div>
+                            <div class="premium-card">
+                                <div class="role-day">DAY 2 · 8월 23일 (일)</div>
+                                <h4>심사위원 (Judge)</h4>
+                                <p>참가자 1인당 약 5분씩 밀착 심화 면접을 진행하고 평가합니다. 심사 점수는 최종 선발에 50% 반영되며, 우수 인재를 직접 발굴합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="premium-note">
+                            <span class="amount">멘토·심사위원 사례비 지급</span>
+                            <span class="desc">멘토·심사위원 위촉 시 별도 사례비를 지급합니다. 구체적인 금액은 참여 의사를 밝히신 분께 개별 안내드립니다.</span>
+                            <button class="btn btn-gold" onclick="openModal()">비용 안내받기</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 05 Benefits -->
+                <section class="block" id="benefits">
+                    <span class="eyebrow">05 · Benefits</span>
+                    <h2 class="sec-title">파트너 기업 혜택</h2>
+                    <p class="sec-lead">채용 효율과 비용, 두 마리 토끼를 모두 잡습니다.</p>
+
+                    <div class="card-grid cols-3">
+                        <div class="card">
+                            <div class="ic">✅</div>
+                            <h4>검증된 인재풀</h4>
+                            <p>영상·멘토링·퀴즈쇼·면접을 거쳐 직무 적합성이 검증된 30명의 인재 풀과 직군별 후보자 정보를 제공합니다.</p>
+                        </div>
+                        <div class="card">
+                            <div class="ic">🛂</div>
+                            <h4>비자 사전 검토</h4>
+                            <p>E-7·F-2·D-10 등 외국인 고용 시 필수인 비자 적합성을 사전 스크리닝해 채용 후 불확실성을 줄입니다.</p>
+                        </div>
+                        <div class="card">
+                            <div class="ic">⏱️</div>
+                            <h4>원스톱 시간 단축</h4>
+                            <p>포트폴리오 심사·실무 과제·1:1 면접까지 단 이틀 안에 원스톱으로 채용 검증을 완료합니다.</p>
+                        </div>
+                        <div class="card" style="border-color: var(--gold); background: var(--gold-bg);">
+                            <div class="ic" style="background:#fff;">💸</div>
+                            <h4>채용 중개비 0원</h4>
+                            <p>서울글로벌센터 글로벌 인재 유치 사업의 일환으로, 매칭·중개 수수료가 일체 발생하지 않습니다.</p>
+                        </div>
+                        <div class="card">
+                            <div class="ic">🔁</div>
+                            <h4>2~4주 사후 매칭</h4>
+                            <p>행사 종료 후에도 6단계 사후 매칭 프로세스로 실제 면접·채용 성과까지 추적·지원합니다.</p>
+                        </div>
+                        <div class="card">
+                            <div class="ic">📜</div>
+                            <h4>기관 추천서 연계</h4>
+                            <p>서울글로벌센터·(주)수앤캐롯츠 추천서와 함께 우수 후보자를 채용 기업에 직접 추천하는 방안을 운영합니다.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 06 Program -->
+                <section class="block" id="program">
+                    <span class="eyebrow">06 · Program</span>
+                    <h2 class="sec-title">행사 진행 (2일 / 총 16시간)</h2>
+                    <p class="sec-lead">DAY 1은 멘토링과 피칭으로 역량을 다지고, DAY 2는 퀴즈쇼·면접·시상으로 종합 평가합니다.</p>
+
+                    <div class="day-tabs">
+                        <button class="day-tab active" onclick="switchDay(event,'day1')">
+                            <span class="d">DAY 1 · 8.22 (토)</span>
+                            <span class="t">멘토링 &amp; 자기소개 피칭</span>
+                        </button>
+                        <button class="day-tab" onclick="switchDay(event,'day2')">
+                            <span class="d">DAY 2 · 8.23 (일)</span>
+                            <span class="t">퀴즈쇼 &amp; 심사위원 면접 &amp; 시상</span>
+                        </button>
+                    </div>
+
+                    <div id="day1" class="day-panel active">
+                        <div class="schedule">
+                            <div class="sch-row"><div class="time">10:00</div><div class="what"><b>개회식</b><span>전체 일정 안내 (30분)</span></div></div>
+                            <div class="sch-row"><div class="time">10:30</div><div class="what"><b>직군별 멘토링 시작</b><span>멘토-참가자 첫 인사 및 아이스브레이킹</span></div></div>
+                            <div class="sch-row"><div class="time">11:00</div><div class="what"><b>자기소개 피칭 점검</b><span>멘토의 1:1 맞춤 피드백 (2시간)</span></div></div>
+                            <div class="sch-row"><div class="time">13:00</div><div class="what"><b>점심 &amp; 네트워킹</b><span>참가자·멘토·운영진·기업 자유 네트워킹</span></div></div>
+                            <div class="sch-row"><div class="time">14:00</div><div class="what"><b>이력서·포트폴리오 피드백</b><span>멘토 개별 검토 및 개선 방향 제시 (2시간)</span></div></div>
+                            <div class="sch-row"><div class="time">16:00</div><div class="what"><b>실무 프로젝트 과제 수행</b><span>희망 직군 실무 과제 &amp; 멘토 피드백 (2시간)</span></div></div>
+                            <div class="sch-row"><div class="time">18:00</div><div class="what"><b>DAY 1 마무리</b><span>익일 일정(퀴즈쇼·면접) 안내</span></div></div>
+                        </div>
+                    </div>
+
+                    <div id="day2" class="day-panel">
+                        <div class="schedule">
+                            <div class="sch-row"><div class="time">10:00</div><div class="what"><b>1부 · 직무 퀴즈쇼</b><span>비즈니스 한국어·직장 문화·면접 매너 퀴즈 (2시간)</span></div></div>
+                            <div class="sch-row"><div class="time">12:00</div><div class="what"><b>결과 발표 &amp; 점심</b><span>우수 팀 시상 및 네트워킹 식사</span></div></div>
+                            <div class="sch-row"><div class="time">13:30</div><div class="what"><b>2부 · 심사위원 면접</b><span>참가자 1인당 5분 심화 면접 (30명 × 5분)</span></div></div>
+                            <div class="sch-row"><div class="time">13:30</div><div class="what"><b>온라인 투표 오픈</b><span>실시간 모바일 대중 투표 (심사 50% + 투표 50%)</span></div></div>
+                            <div class="sch-row"><div class="time">16:00</div><div class="what"><b>투표 마감 &amp; 점수 취합</b><span>최종 우수자 선정</span></div></div>
+                            <div class="sch-row"><div class="time">16:30</div><div class="what"><b>3부 · 시상식</b><span>대상·최우수상·우수상 시상 및 부상 수여</span></div></div>
+                            <div class="sch-row"><div class="time">17:30</div><div class="what"><b>사후 기업 매칭 안내</b><span>1:1 심화 면접 및 글로벌 채용 연계 안내</span></div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 07 Matching -->
+                <section class="block" id="matching">
+                    <span class="eyebrow">07 · After-event</span>
+                    <h2 class="sec-title">사후 채용 매칭 프로세스</h2>
+                    <p class="sec-lead">행사 종료 후 2~4주간 6단계 매칭 프로세스로 실제 면접·채용 성과까지 추적합니다.</p>
+
+                    <div class="steps">
+                        <div class="step"><div class="n">01</div><h5>수요 조사</h5><p>기업별 채용 희망 직군 및 인력 수요 파악</p></div>
+                        <div class="step"><div class="n">02</div><h5>이력서 정리</h5><p>참가자별 이력서·포트폴리오 정리</p></div>
+                        <div class="step"><div class="n">03</div><h5>매칭 리스트</h5><p>기업-참가자 매칭 리스트 제공</p></div>
+                        <div class="step"><div class="n">04</div><h5>일정 조율</h5><p>1차 면접 일정 조율 및 확정</p></div>
+                        <div class="step"><div class="n">05</div><h5>면접 트래킹</h5><p>면접 진행 여부 및 결과 추적</p></div>
+                        <div class="step"><div class="n">06</div><h5>채용 집계</h5><p>실제 채용·인턴십 연계 집계</p></div>
+                    </div>
+
+                    <!-- Final CTA -->
+                    <div class="final-cta">
+                        <h3>함께하실 준비가 되셨나요?</h3>
+                        <p>검증된 글로벌 인재를 가장 먼저 만나보세요.<br>참여 의사를 남겨주시면 개별 안내드립니다.</p>
+                        <div class="hero-actions" style="justify-content:center;">
+                            <button class="btn btn-primary" onclick="openModal()">참여 신청하기 →</button>
+                            <button class="btn btn-ghost" onclick="window.print()">제안서 PDF 저장</button>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div>
+                            <strong>서울글로벌센터 &times; (주)수앤캐롯츠 (Soo House)</strong><br>
+                            Email: april@sooandcarrots.com · 담당자: 이정화
+                        </div>
+                        <div>© 2026 Seoul Global Career Survival.<br>All Rights Reserved.</div>
+                    </footer>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== Application Modal ===== -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h2>참여 파트너 신청</h2>
+            <p class="modal-intro">정보를 입력해주시면 담당자가 연락드립니다.</p>
+
+            <form onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label class="form-label" for="comp_name">기업명</label>
+                    <input type="text" id="comp_name" class="form-control" placeholder="예: (주)글로벌테크" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="comp_contact">담당자 성함 / 부서</label>
+                    <input type="text" id="comp_contact" class="form-control" placeholder="예: 홍길동 / 인사팀" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="comp_email">담당자 이메일</label>
+                    <input type="email" id="comp_email" class="form-control" placeholder="example@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="comp_phone">연락처</label>
+                    <input type="tel" id="comp_phone" class="form-control" placeholder="예: 010-1234-5678" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">희망 참여 방식 (중복 선택 가능)</label>
+                    <div class="check-grid one">
+                        <label class="form-checkbox"><input type="checkbox" name="participation_tracks" value="A. 외국인 인재 채용 매칭"> A. 외국인 인재 채용 매칭</label>
+                        <label class="form-checkbox"><input type="checkbox" name="participation_tracks" value="B. 현장 멘토, 심사위원 참여"> B. 현장 멘토, 심사위원 참여 <span style="color:var(--gold);font-weight:700;font-size:12px;">(비용 지급)</span></label>
+                        <label class="form-checkbox"><input type="checkbox" name="participation_tracks" value="C. 실무 프로젝트 과제 제공"> C. 실무 프로젝트 과제 제공</label>
+                        <label class="form-checkbox"><input type="checkbox" name="participation_tracks" value="D. 시상·리워드·브랜딩 참여"> D. 시상·리워드·브랜딩 참여</label>
+                        <label class="form-checkbox"><input type="checkbox" name="participation_tracks" value="상담 후 참여 방식을 결정하고 싶습니다."> 상담 후 참여 방식을 결정하고 싶습니다.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">관심 직군 (중복 선택 가능)</label>
+                    <div class="check-grid">
+                        <label class="form-checkbox"><input type="checkbox" name="job_interests" value="마케팅/SNS/브랜드"> 마케팅/SNS/브랜드</label>
+                        <label class="form-checkbox"><input type="checkbox" name="job_interests" value="해외영업/뷰티/소비재"> 해외영업/뷰티/소비재</label>
+                        <label class="form-checkbox"><input type="checkbox" name="job_interests" value="개발/IT"> 개발/IT</label>
+                        <label class="form-checkbox"><input type="checkbox" name="job_interests" value="콘텐츠/디자인/영상"> 콘텐츠/디자인/영상</label>
+                        <label class="form-checkbox"><input type="checkbox" name="job_interests" value="관광/호텔/여행"> 관광/호텔/여행</label>
+                        <label class="form-checkbox"><input type="checkbox" name="job_interests" value="직군 무관/ 아직 미정"> 직군 무관/ 아직 미정</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="comp_message">기타 문의 또는 전달 사항</label>
+                    <textarea id="comp_message" class="form-control" placeholder="멘토·심사위원 비용 안내 요청 등 자유롭게 작성해주세요." style="min-height: 96px; resize: vertical;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-checkbox"><input type="checkbox" id="consent" required> 위 개인정보 수집 이용에 동의합니다.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">제안 신청서 제출하기</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // ===== 구글폼 연동 =====
+        const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdzgXzrKoj0TwxaK-ttzknHHSY9MaZJ4i4P-fiSEcl7wlrKFg/formResponse";
+        const FIELD_MAPPING = {
+            comp_name: "entry.561032368",
+            comp_contact: "entry.265049558",
+            comp_email: "entry.478930903",
+            comp_phone: "entry.1872622731",
+            participation_tracks: "entry.185131629",
+            job_interests: "entry.907931145",
+            comp_message: "entry.1775436704",
+            consent: "entry.514207354"
+        };
+
+        // ===== 모달 =====
+        function openModal() { document.getElementById("applyModal").style.display = "flex"; }
+        function closeModal() { document.getElementById("applyModal").style.display = "none"; }
+        window.addEventListener("click", function (e) {
+            const m = document.getElementById("applyModal");
+            if (e.target === m) m.style.display = "none";
+        });
+
+        // ===== DAY 탭 =====
+        function switchDay(evt, dayId) {
+            document.querySelectorAll(".day-panel").forEach(p => p.classList.remove("active"));
+            document.querySelectorAll(".day-tab").forEach(t => t.classList.remove("active"));
+            document.getElementById(dayId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // ===== 모바일 내비 생성 =====
+        (function buildMobileNav() {
+            const mob = document.getElementById("mobileNav");
+            document.querySelectorAll("#sideNav a").forEach(a => {
+                const link = document.createElement("a");
+                link.href = a.getAttribute("href");
+                link.textContent = a.dataset.label;
+                link.dataset.target = a.getAttribute("href").slice(1);
+                mob.appendChild(link);
+            });
+        })();
+
+        // ===== 스크롤 스파이 (현재 섹션 강조) =====
+        const sections = document.querySelectorAll("section.block");
+        const sideLinks = document.querySelectorAll("#sideNav a");
+        const mobLinks = document.querySelectorAll("#mobileNav a");
+
+        function setActive(id) {
+            sideLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + id));
+            mobLinks.forEach(a => {
+                const on = a.dataset.target === id;
+                a.classList.toggle("active", on);
+                if (on) a.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) setActive(entry.target.id);
+            });
+        }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+
+        sections.forEach(s => observer.observe(s));
+
+        // ===== 폼 제출 =====
+        function submitForm(event) {
+            event.preventDefault();
+
+            const company = document.getElementById("comp_name").value;
+            const name = document.getElementById("comp_contact").value;
+            const email = document.getElementById("comp_email").value;
+            const phone = document.getElementById("comp_phone").value;
+            const message = document.getElementById("comp_message").value;
+            const consent = document.getElementById("consent").checked;
+
+            const tracks = document.querySelectorAll('input[name="participation_tracks"]:checked');
+            const jobs = document.querySelectorAll('input[name="job_interests"]:checked');
+            const consentValue = consent ? "위 개인정보 수집 이용에 동의합니다." : "";
+
+            const data = [];
+            data.push(`${FIELD_MAPPING.comp_name}=${encodeURIComponent(company)}`);
+            data.push(`${FIELD_MAPPING.comp_contact}=${encodeURIComponent(name)}`);
+            data.push(`${FIELD_MAPPING.comp_email}=${encodeURIComponent(email)}`);
+            data.push(`${FIELD_MAPPING.comp_phone}=${encodeURIComponent(phone)}`);
+            tracks.forEach(el => data.push(`${FIELD_MAPPING.participation_tracks}=${encodeURIComponent(el.value)}`));
+            jobs.forEach(el => data.push(`${FIELD_MAPPING.job_interests}=${encodeURIComponent(el.value)}`));
+            data.push(`${FIELD_MAPPING.comp_message}=${encodeURIComponent(message)}`);
+            data.push(`${FIELD_MAPPING.consent}=${encodeURIComponent(consentValue)}`);
+
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = "제출 중...";
+
+            fetch(GOOGLE_FORM_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: data.join("&"),
+                mode: "no-cors"
+            })
+            .then(() => {
+                alert(`${company} (${name}님)의 제안 신청이 정상 접수되었습니다.\n\n사무국에서 빠르게 이메일로 연락 드리겠습니다.`);
+                event.target.reset();
+                closeModal();
+                submitBtn.disabled = false;
+                submitBtn.textContent = "제안 신청서 제출하기";
+            })
+            .catch((err) => {
+                console.error("제출 오류:", err);
+                alert("제출 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "제안 신청서 제출하기";
+            });
+        }
+    </script>
+</body>
+
+</html>
